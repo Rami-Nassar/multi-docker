@@ -22,7 +22,7 @@ after_sucess:
   - docker push incognito23/multi-server
   - docker push incognito23/multi-worker
 
-  deploy:
+deploy:
   provider: elasticbeanstalk
   region: 'us-east-2'
   app: 'multi-docker'

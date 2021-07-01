@@ -21,3 +21,15 @@ after_sucess:
   - docker push incognito23/multi-nginx
   - docker push incognito23/multi-server
   - docker push incognito23/multi-worker
+
+  deploy:
+  provider: elasticbeanstalk
+  region: 'us-east-2'
+  app: 'multi-docker'
+  env: 'Multidocker-env'
+  bucket_name: 'elasticbeanstalk-us-east-2-776959113865'
+  bucket_path: 'docker-multi'
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
